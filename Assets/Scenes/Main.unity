@@ -9242,6 +9242,33 @@ MonoBehaviour:
   - brushDescriptor: {fileID: 11400000, guid: ba0e0f27d49da824aa74ab60edd90a56, type: 2}
   - brushDescriptor: {fileID: 11400000, guid: 987198ed6dc42fb48861ac40965edb58, type: 2}
   - brushDescriptor: {fileID: 11400000, guid: 84463df8784ac6646ab814a16602c250, type: 2}
+  culledBrushPairs:
+  - doubleSided: {fileID: 11400000, guid: 659158fcdc71ae74c95d543604d4e9a2, type: 2}
+    singleSided: {fileID: 11400000, guid: 491ce00afea904f4e83a83267ec30c5a, type: 2}
+  - doubleSided: {fileID: 11400000, guid: c969cee8911aa4d4293ee395f822a70c, type: 2}
+    singleSided: {fileID: 11400000, guid: e853bc8fe41bf9d4cacbf15f1239a2b0, type: 2}
+  - doubleSided: {fileID: 11400000, guid: f2a3ea577216f00419871f50d71cc885, type: 2}
+    singleSided: {fileID: 11400000, guid: 9c9fdb9e65c5dc2458d2db5ca8183471, type: 2}
+  - doubleSided: {fileID: 11400000, guid: b24b145ee272a9345b7f0142039120ea, type: 2}
+    singleSided: {fileID: 11400000, guid: 4465b5ef3605bec42b3e6b04508ddb6b, type: 2}
+  - doubleSided: {fileID: 11400000, guid: b3384ba6cddfeb64ba4b7d4abed9a3e8, type: 2}
+    singleSided: {fileID: 11400000, guid: 4120e9061251b374d8fed28110fc9b70, type: 2}
+  - doubleSided: {fileID: 11400000, guid: 816add3f326839c4cafce8bfc4a7e26b, type: 2}
+    singleSided: {fileID: 11400000, guid: 11adf4e049619d54696db54bcdd0c724, type: 2}
+  - doubleSided: {fileID: 11400000, guid: c80c2ea05a3d85e48858a322a18cf5bb, type: 2}
+    singleSided: {fileID: 11400000, guid: c1105f80e6e305d42a2368476c5e8948, type: 2}
+  - doubleSided: {fileID: 11400000, guid: b477bd8a0ed72b643833f1c162ac6d0a, type: 2}
+    singleSided: {fileID: 11400000, guid: d55d8be5dac1cf748abe4ae1ae7fc341, type: 2}
+  - doubleSided: {fileID: 11400000, guid: 695c0f01b9a7e91449b541ab1b30fc4f, type: 2}
+    singleSided: {fileID: 11400000, guid: f3974944e708baf4e8bd5059dfa0c828, type: 2}
+  - doubleSided: {fileID: 11400000, guid: d7e129b9879e8b3499ccc4d81ca68ee2, type: 2}
+    singleSided: {fileID: 11400000, guid: c2166d6b2c9b4ac459f21599dd57aa9f, type: 2}
+  - doubleSided: {fileID: 11400000, guid: 7a3a9d5ee2e492c49b1146ed03806398, type: 2}
+    singleSided: {fileID: 11400000, guid: 39d13a832a0de9347a03735ffa0fa075, type: 2}
+  - doubleSided: {fileID: 11400000, guid: a3243d2ad2f1f144d8c096c7a7f080f0, type: 2}
+    singleSided: {fileID: 11400000, guid: dea67637cd1a27e4c9b152f4bbcb84e5, type: 2}
+  - doubleSided: {fileID: 11400000, guid: eb608f68fb3036b47be357a021ed7618, type: 2}
+    singleSided: {fileID: 11400000, guid: e814fef197fd71944a2f50c2bb918be2, type: 2}
 --- !u!114 &652605547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29607,52 +29634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!114 &1915877483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29665,52 +29646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!114 &1915877484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29723,52 +29658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!4 &1915877485
 Transform:
   m_ObjectHideFlags: 0
@@ -29795,52 +29684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!114 &1915877487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29853,52 +29696,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!114 &1915877488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29911,52 +29708,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4444ce35d262aa648ad0c425a559b931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentOverlayType: 2
-  isDynamic: 0
-  isProtectedContent: 0
-  srcRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  srcRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectLeft:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  destRectRight:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  invertTextureRects: 0
-  overrideTextureRectMatrix: 0
-  overridePerLayerColorScaleAndOffset: 0
-  colorScale: {x: 1, y: 1, z: 1, w: 1}
-  colorOffset: {x: 0, y: 0, z: 0, w: 0}
-  useExpensiveSuperSample: 0
-  hidden: 0
-  isExternalSurface: 0
-  externalSurfaceWidth: 0
-  externalSurfaceHeight: 0
-  compositionDepth: 0
-  noDepthBufferTesting: 0
-  layerTextureFormat: 0
-  currentOverlayShape: 0
-  textures:
-  - {fileID: 0}
-  - {fileID: 0}
-  isAlphaPremultiplied: 0
-  _previewInEditor: 0
 --- !u!1001 &1916224247
 PrefabInstance:
   m_ObjectHideFlags: 0

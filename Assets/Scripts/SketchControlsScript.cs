@@ -140,7 +140,10 @@ namespace TiltBrush
             LoadWaitOnDownload,
             SignOutConfirm,
             ReadOnlyNotice,
-            OpenColorOptionsPopup = 7000
+            OpenColorOptionsPopup = 7000,
+
+            //Custom culling
+            ToggleBackfaceCulling
         }
 
         public enum ControlsType
@@ -4841,6 +4844,15 @@ namespace TiltBrush
                     CameraPathCaptureRig.RecordPath();
                     EatGazeObjectInput();
                     break;
+                case GlobalCommands.ToggleBackfaceCulling:
+                    //Only allow toggling if currently on a brush that supports culling
+                    //This will determine if the state changes
+                    if (BrushCatalog.m_Instance.IsCullableBrush(PointerManager.m_Instance.MainPointer.CurrentBrush))
+                    {
+                        PointerManager.m_Instance.BackfaceCullingModeEnabled = !PointerManager.m_Instance.BackfaceCullingModeEnabled;
+                        PointerManager.m_Instance.SetBrushForAllPointers(PointerManager.m_Instance.MainPointer.CurrentBrush);
+                    }
+                    break;
                 case GlobalCommands.Null: break; // Intentionally blank.
                 default:
                     Debug.LogError($"Unrecognized command {rEnum}");
@@ -4889,6 +4901,7 @@ namespace TiltBrush
                     return App.DriveSync.IsFolderOfTypeSynced((DriveSync.SyncedFolderType)iParam);
                 case GlobalCommands.GoogleDriveSync: return App.DriveSync.SyncEnabled;
                 case GlobalCommands.RecordCameraPath: return VideoRecorderUtils.ActiveVideoRecording != null;
+                case GlobalCommands.ToggleBackfaceCulling: return PointerManager.m_Instance.BackfaceCullingModeEnabled;
             }
             return false;
         }
@@ -5017,6 +5030,8 @@ namespace TiltBrush
                 case GlobalCommands.GoogleDriveSync:
                     return App.GoogleIdentity.LoggedIn;
                 case GlobalCommands.RecordCameraPath: return m_WidgetManager.CameraPathsVisible;
+                case GlobalCommands.ToggleBackfaceCulling:
+                    return BrushCatalog.m_Instance.IsCullableBrush(PointerManager.m_Instance.MainPointer.CurrentBrush);
             }
             return true;
         }

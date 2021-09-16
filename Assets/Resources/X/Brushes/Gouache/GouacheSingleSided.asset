@@ -56,8 +56,8 @@ MonoBehaviour:
   m_M11Compatibility: 0
   m_SolidMinLengthMeters_PS: 0.002
   m_TubeStoreRadiusInTexcoord0Z: 0
-  m_RenderBackfaces: 1
-  m_BackIsInvisible: 0
+  m_RenderBackfaces: 0
+  m_BackIsInvisible: 1
   m_BackfaceHueShift: 0
   m_BoundsPadding: 0
   m_PlayBackAtStrokeGranularity: 0

@@ -155,6 +155,8 @@ namespace TiltBrush
         private Color m_lastChosenColor { get; set; }
         public Vector3 colorJitter { get; set; }
 
+        private bool m_BackfaceCullingModeEnabled; //whether culling is enabled
+
         // These variables are legacy for supporting z-fighting control on the sketch surface
         // panel in monoscopic mode.
         private float m_SketchSurfaceLineDepthVarianceBase = 0.0001f;
@@ -264,6 +266,12 @@ namespace TiltBrush
         {
             get { return m_StraightEdgeEnabled; }
             set { m_StraightEdgeEnabled = value; }
+        }
+
+        public bool BackfaceCullingModeEnabled
+        {
+            get { return m_BackfaceCullingModeEnabled; }
+            set { m_BackfaceCullingModeEnabled = value; }
         }
 
         public bool StraightEdgeGuideIsLine
@@ -651,10 +659,20 @@ namespace TiltBrush
 
         public void SetBrushForAllPointers(BrushDescriptor desc)
         {
+            if (m_BackfaceCullingModeEnabled)
+            {
+                desc = BrushCatalog.m_Instance.GetCulledBrush(desc);
+            }
+            else
+            {
+                desc = BrushCatalog.m_Instance.GetUnCulledBrush(desc);
+            }
+
             for (int i = 0; i < m_NumActivePointers; ++i)
             {
                 m_Pointers[i].m_Script.SetBrush(desc);
             }
+
         }
 
         public void SetPointerTransform(ControllerName name, Vector3 v, Quaternion q)

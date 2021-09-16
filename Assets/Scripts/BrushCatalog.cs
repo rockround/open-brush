@@ -62,6 +62,8 @@ namespace TiltBrush
         [SerializeField] private Brush m_DefaultBrush;
         private bool m_IsLoading;
         private Dictionary<Guid, Brush> m_GuidToBrush;
+        private Dictionary<Brush, Brush> m_BrushToCulledBrush;
+        private Dictionary<Brush, Brush> m_CulledBrushToBrush;
         private HashSet<Brush> m_AllBrushes;
         private List<Brush> m_GuiBrushList;
 
@@ -79,6 +81,32 @@ namespace TiltBrush
             {
                 return null;
             }
+        }
+        public Brush GetCulledBrush(Brush nonCulled)
+        {
+            try
+            {
+                return m_BrushToCulledBrush[nonCulled];
+            }
+            catch (KeyNotFoundException)
+            {
+                return nonCulled;
+            }
+        }
+        public Brush GetUnCulledBrush(Brush culled)
+        {
+            try
+            {
+                return m_CulledBrushToBrush[culled];
+            }
+            catch (KeyNotFoundException)
+            {
+                return culled;
+            }
+        }
+        public bool IsCullableBrush(Brush brush)
+        {
+            return m_BrushToCulledBrush.ContainsKey(brush) || m_CulledBrushToBrush.ContainsKey(brush);
         }
         public Brush DefaultBrush
         {
@@ -98,6 +126,8 @@ namespace TiltBrush
             m_Instance = this;
             m_GuidToBrush = new Dictionary<Guid, Brush>();
             m_MaterialToBrush = new Dictionary<Material, Brush>();
+            m_BrushToCulledBrush = new Dictionary<Brush, Brush>();
+            m_CulledBrushToBrush = new Dictionary<Brush, Brush>();
             m_AllBrushes = new HashSet<Brush>();
             m_GuiBrushList = new List<Brush>();
 
@@ -111,6 +141,7 @@ namespace TiltBrush
             Shader.SetGlobalTexture("_GlobalNoiseTexture", m_GlobalNoiseTexture);
         }
 
+        public CulledBrushPair[] culledBrushPairs;
         /// Begins reloading any brush assets that come from loose files.
         /// The "BrushCatalogChanged" event will be fired when this is complete.
         public void BeginReload()
@@ -164,6 +195,15 @@ namespace TiltBrush
                     {
                         older.m_SupersededBy = brush;
                     }
+                }
+
+                //Generate map from non-culled to culled for pointer manager conversion use
+                //var manifestCulledBrushPairs = LoadCulledBrushPairsInManifest();
+                //foreach (var brushPair in manifestCulledBrushPairs)
+                foreach(var brushPair in culledBrushPairs)
+                {
+                    m_BrushToCulledBrush[brushPair.doubleSided] = brushPair.singleSided;
+                    m_CulledBrushToBrush[brushPair.singleSided] = brushPair.doubleSided;
                 }
 
                 m_AllBrushes = new HashSet<Brush>(m_GuidToBrush.Values);

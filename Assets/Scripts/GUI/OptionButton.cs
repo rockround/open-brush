@@ -24,6 +24,7 @@ namespace TiltBrush
         [SerializeField] protected int m_CommandParam2 = -1;
         [SerializeField] protected bool m_RequiresPopup = false;
         [SerializeField] protected bool m_CenterPopupOnButton = false;
+        [SerializeField] protected bool m_SwitchTextureWithAvailability = false;
         [SerializeField] protected Vector3 m_PopupOffset;
         [SerializeField] protected string m_PopupText = "";
         [SerializeField] protected string m_ToggleOnDescription = "";
@@ -125,6 +126,25 @@ namespace TiltBrush
             if (bWasAvailable != bAvailable)
             {
                 SetButtonAvailable(bAvailable);
+            }
+            if (m_ToggleButton && m_ToggleOnTexture != null && m_SwitchTextureWithAvailability)
+            {
+                if (bAvailable)
+                {
+                    if (m_ToggleActive)
+                    {
+                        SetButtonActivated(true);
+                        SetButtonTexture(m_ToggleOnTexture);
+                    }
+                    else
+                    {
+                        SetButtonTexture(m_DefaultTexture);
+                    }
+                }
+                else
+                {
+                    SetButtonTexture(m_DefaultTexture);
+                }
             }
         }
 
